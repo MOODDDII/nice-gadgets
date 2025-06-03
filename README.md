@@ -1,66 +1,128 @@
-#🛍️ Live Demo
+# 📱 React Phone Catalog
 
-This is a responsive phone catalog built with React, featuring routing, local state management, dynamic pages, persistent storage, and a modular component structure.
+🔗 **Live Demo:** [moodddii.github.io/react_phone-catalog](https://moodddii.github.io/react_phone-catalog/)
 
-##📁 Project Structure
-All components are placed in src/components. Each component has its own folder with index.ts, ComponentName.tsx, and ComponentName.module.scss.
+This is a responsive and interactive phone catalog application built with **React**. It features dynamic routing, local storage, sorting, pagination, state management, and a fully modular structure following modern best practices.
 
-Styles are handled using CSS Modules.
+---
 
-Extended structure: src/modules with per-page folders (e.g. HomePage, CartPage, etc.) and a shared folder for common logic and UI.
+## 🗂️ Project Structure
 
-Each module contains its own components, and optionally hooks, constants, etc.
+- All components are stored in `src/components`.
+- Each component is organized in its own folder containing:
+  - `index.ts`
+  - `ComponentName.tsx`
+  - `ComponentName.module.scss`
+- Uses **CSS Modules** for styling.
+- Modular structure with `src/modules`, which contains:
+  - One folder per page (`HomePage`, `CartPage`, etc.)
+  - A shared folder for reusable components, logic, and styles.
+  - Each module has its own `components`, `hooks`, `constants`, etc.
 
-##🧭 Navigation
-Sticky Header with logo, navigation, favorites, and cart icons.
+---
 
-Footer with a GitHub repo link and a "Back to top" button (with smooth scroll).
+## 🚀 Features
 
-Page content is centered and has consistent max width.
+### 🔝 Header & Footer
 
-##🏠 Home Page (/)
-Image Slider that auto-rotates every 5s and supports manual navigation with arrows and dots.
+- **Sticky Header** with logo, navigation links, Favorites, and Cart icons.
+- **Footer** includes:
+  - Link to GitHub repository.
+  - Smooth "Back to Top" button.
+- Page content has a consistent max width and centered layout.
 
-Hot Prices Slider — discounted products sorted by largest absolute discount.
+---
 
-Shop by Category block with links to /phones, /tablets, /accessories.
+### 🏠 Home Page (`/`)
 
-Brand New block with the newest products based on release year.
+- **Image Slider**:
+  - Auto-switches every 5 seconds.
+  - Manual navigation with arrows and dot indicators.
+- **Hot Prices** slider:
+  - Shows discounted products sorted by highest discount.
+- **Shop by Category** block:
+  - Links to `/phones`, `/tablets`, and `/accessories`.
+- **Brand New** block:
+  - Displays newest products based on release year.
 
-##📦 Category Pages (/phones, /tablets, /accessories)
-Display products by type with a dynamic heading.
+---
 
-Sort by newest, alphabetically, or by price (discounted).
+### 📦 Category Pages (`/phones`, `/tablets`, `/accessories`)
 
-Pagination and items-per-page selector (4, 8, 16, all) with URL synchronization.
+- Displays a dynamic title: "Phones Page", "Tablets Page", etc.
+- Shows product list filtered by category.
+- Features:
+  - Sorting: Newest, Alphabetically, Cheapest.
+  - Pagination with 4, 8, 16, or all items per page.
+  - Query params saved to the URL (`?sort=age`, `?page=2&perPage=8`).
+  - Loader during fetch, error messages on failure.
+  - Message shown when no products available.
 
-Loader during data fetch, error handling, and messages for empty lists.
+---
 
-##📱 Product Details Page (/product/:productId)
-Detailed product view: gallery, colors, capacities, tech specs, and description.
+### 📱 Product Details Page (`/product/:productId`)
 
-"You may also like" section with random suggested products.
+- Shows full product details:
+  - Image gallery, color and capacity selectors.
+  - Description and technical specs.
+- Includes:
+  - Breadcrumbs (Home / Category / Product Name).
+  - "You may also like" section with random suggestions.
+  - Back button that mimics browser behavior.
+  - Loader while fetching.
+  - Message if product is not found.
 
-Breadcrumbs with links to Home and category.
+---
 
-Back button (mimics browser back).
+### 🛒 Cart Page (`/cart`)
 
-Handles invalid product IDs with a "Product was not found" message.
+- List of added products with quantity management.
+- Features:
+  - Add/Remove items.
+  - Increase/Decrease quantity (minimum 1).
+  - Total count and price calculation.
+  - Cart saved in `localStorage`.
+  - Checkout button opens modal:
+    - Confirms and clears cart or cancels.
+  - Cart icon in header shows total quantity.
 
-##🛒 Cart Page (/cart)
-Add/remove products with quantity controls.
+---
 
-Cart stored in localStorage and persists between reloads.
+### ❤️ Favorites Page (`/favorites`)
 
-Total quantity and price calculation.
+- Product cards include a heart icon to add/remove from favorites.
+- Favorite items are saved in `localStorage`.
+- Header icon shows number of favorited items.
 
-"Checkout" button opens confirmation dialog (simulated).
+---
 
-Cart icon shows the current number of items.
+## ✨ Additional UI/UX Features
 
-##❤️ Favorites Page (/favorites)
-Add/remove products from favorites via a heart icon.
+- Smooth hover effects on buttons and images.
+- Image scaling by 10% on hover.
+- Fully responsive layout.
+- Custom 404 Not Found page for unmatched routes.
+- All form elements and icons follow the UI Kit style.
 
-Favorite count displayed in the header.
+---
 
-Favorites are stored in localStorage.
+## 🛠️ Tech Stack
+
+- React
+- TypeScript
+- React Router
+- CSS Modules
+- LocalStorage
+- Context API
+
+---
+
+## 📂 Getting Started (Optional)
+
+To run the project locally:
+
+```bash
+git clone https://github.com/moodddii/react_phone-catalog.git
+cd react_phone-catalog
+npm install
+npm start
